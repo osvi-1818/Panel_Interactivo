@@ -1,0 +1,1160 @@
+body {
+     font-family: Arial, sans-serif;
+     background-color: #f0f2f5;
+     text-align: center;
+     margin: 0;
+     padding: 20px;
+    }
+
+     h1 {
+         color: #1769c2;
+     }
+
+.panel {
+     max-width: 1200px;
+     margin: 20px auto;
+    }
+
+.panel img {
+    width: 100%;
+    height: auto;
+    display: block;
+    }
+
+/* ==========================================
+   CONTENEDOR DEL PANEL INTERACTIVO
+   ========================================== */
+
+.imagen-panel {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    background-color: #ffffff;
+    border: 1px solid #dbe4ef;
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(15, 35, 60, 0.10),
+        0 2px 6px rgba(15, 35, 60, 0.05);
+}
+
+/* ==========================================
+   IMAGEN PRINCIPAL
+   ========================================== */
+
+.imagen-panel img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+
+/* Zona invisible sobre la HMI */
+.componente {
+    position: absolute;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Posición de la HMI */
+.hmi {
+    left: 38%;
+    top: 22%;
+    width: 24%;
+    height: 26%;
+}
+/* Posición del PID*/
+.pid {
+    left: 76%;
+    top: 20%;
+    width: 15%;
+    height: 17%;
+}
+
+.panel-alarmas {
+    left: 17%;
+    top: 19%;
+    width: 18%;
+    height: 30%;
+
+}
+
+.interruptor-limite {
+
+    left: 65%;
+    top: 17%;
+    width: 9%;
+    height: 31%;
+}
+
+.ventilador {
+
+    left: 77%;
+    top: 39%;
+    width: 4.5%;
+    height: 12%;
+
+}
+
+.sensor-j {
+    left: 84%;
+    top: 42%;
+    width: 5%;
+    height: 5%;
+}
+
+ 
+
+    /* ==========================================
+    SMART DATA LOGGER
+    ========================================== */
+
+    .smart-data-logger {
+        left: 13%;
+        top: 55%;
+        width: 7%;
+        height: 18%;
+    }
+
+    /* ==========================================
+    TRANSMISOR DE TEMPERATURA/HUMEDAD
+    ========================================== */
+
+    .transmisor-temperatura {
+        left: 21%;
+        top: 60%;
+        width: 20%;
+        height: 19%;
+    }
+
+    /* ==========================================
+    MEDIDOR DE ENERGIA
+    ========================================== */
+
+    .medidor-energia {
+        left: 43%;
+        top: 55%;
+        width: 8%;
+        height: 25%;
+    }
+
+    /* ==========================================
+    CONVERTIDOR RS485 A ETHERNET
+    ========================================== */
+
+    .convertidor-rs485 {
+        left: 51.5%;
+        top: 55%;
+        width: 7%;
+        height: 25%;
+    }
+
+    /* ==========================================
+    TARJETA FLEXYS DE ENTRADAS
+    ========================================== */
+
+    .flexys-entradas {
+        left: 59%;
+        top: 55%;
+        width: 8%;
+        height: 25%;
+    }
+
+    /* ==========================================
+    TARJETA FLEXYS DE SALIDAS
+    ========================================== */
+
+    .flexys-salidas {
+        left: 68%;
+        top: 55%;
+        width: 8%;
+        height: 25%;
+    }
+
+    /* ==========================================
+    TORRETA MULTINIVEL
+    ========================================== */
+
+    .torreta-multinivel {
+        left: 79%;
+        top: 53%; 
+        width: 17%;
+        height: 20%;
+    }
+
+    /* Efecto al pasar el cursor */
+    .hmi:hover,
+    .pid:hover,
+    .panel-alarmas:hover,
+    .interruptor-limite:hover,
+    .ventilador:hover,
+    .sensor-j:hover,
+    .smart-data-logger:hover,
+    .transmisor-temperatura:hover,
+    .medidor-energia:hover,
+    .convertidor-rs485:hover,
+    .flexys-entradas:hover,
+    .flexys-salidas:hover,
+    .torreta-multinivel:hover {
+        background-color: rgba(0, 120, 255, 0.15);
+        border: 3px solid #1769c2;
+    }
+
+
+
+/* Ventana */
+/* ==============================
+   VENTANA DE INFORMACIÓN
+   ============================== */
+
+.ventana {
+    display: none;
+
+    position: fixed;
+
+    z-index: 1000;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.65);
+
+    padding-top: 60px;
+}
+
+
+/* Contenedor de la ficha */
+
+.contenido-ventana {
+
+    background-color: white;
+
+    width: 600px;
+    max-width: 90%;
+
+    margin: auto;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    text-align: left;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+    position: relative;
+}
+
+
+/* Título */
+
+.contenido-ventana h2 {
+
+    margin-top: 0;
+
+    text-align: center;
+
+    color: #1769c2;
+
+    font-size: 28px;
+}
+
+
+
+/* Numero de parte destacado */
+
+.numero-parte {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+    margin: 12px 0 24px;
+
+    background: #eaf2ff;
+    color: #1556a8;
+
+    border: 1px solid #cbdfff;
+    border-radius: 10px;
+
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+
+    overflow-wrap: anywhere;
+}
+
+
+
+/* Línea */
+
+.contenido-ventana hr {
+
+    border: none;
+
+    border-top: 1px solid #ddd;
+
+    margin: 25px 0;
+}
+
+
+/* Subtítulos */
+
+.contenido-ventana h3 {
+
+    color: #333;
+
+    margin-bottom: 8px;
+}
+
+
+/* Texto */
+
+.contenido-ventana p {
+
+    color: #555;
+
+    line-height: 1.6;
+}
+
+
+/* Lista */
+
+.contenido-ventana li {
+
+    margin-bottom: 8px;
+
+    color: #555;
+}
+
+
+/* Botón X */
+
+.cerrar {
+
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    color: #777;
+}
+
+
+.cerrar:hover {
+
+    color: red;
+}
+
+
+/* Botón cerrar */
+
+.boton-cerrar {
+
+    display: block;
+
+    margin: 25px auto 0;
+
+    padding: 10px 25px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #1769c2;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+.boton-cerrar:hover {
+
+    background-color: #0d4f96;
+}
+
+/* ==========================================
+   INFORMACIÓN GENERAL DEL COMPONENTE
+   ========================================== */
+
+.informacion-general {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+.dato {
+
+    background-color: #f5f7fa;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+}
+
+
+.dato strong {
+
+    display: block;
+
+    color: #1769c2;
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.dato span {
+
+    color: #444;
+
+    font-size: 15px;
+
+}
+
+
+
+/* ==========================================
+   REDISEÑO DE FICHAS TECNICAS
+   ========================================== */
+
+.ventana {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    background-color: rgba(10, 23, 43, 0.72);
+    backdrop-filter: blur(5px);
+
+    overflow-y: auto;
+    padding: 24px;
+}
+
+/* Contenedor principal de la ficha */
+
+.contenido-ventana {
+    position: relative;
+
+    width: 100%;
+    max-width: 780px;
+    margin: 3vh auto;
+
+    padding: 36px;
+    box-sizing: border-box;
+
+    background: #ffffff;
+    color: #1e293b;
+
+    border: 1px solid #dbe4ef;
+    border-radius: 20px;
+
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+
+    animation: aparecerFicha 0.25s ease-out;
+}
+
+/* Titulo del componente */
+
+.contenido-ventana h2 {
+    margin: 0 42px 12px 0;
+
+    color: #12345a;
+    font-size: 28px;
+    line-height: 1.25;
+    font-weight: 750;
+}
+
+/* Numero de parte */
+
+.numero-parte {
+    display: inline-block;
+
+    padding: 8px 13px;
+    margin-bottom: 20px;
+
+    background: #eaf2ff;
+    color: #1556a8;
+
+    border: 1px solid #cbdfff;
+    border-radius: 8px;
+
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: 700;
+
+    overflow-wrap: anywhere;
+}
+
+/* Separador */
+
+.contenido-ventana hr {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 8px 0 24px;
+}
+
+/* Informacion general */
+
+.informacion-general {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+/* Tarjetas de informacion */
+
+.dato {
+    min-width: 0;
+    padding: 16px;
+
+    background: #f5f8fc;
+    border: 1px solid #e0e8f2;
+    border-radius: 12px;
+}
+
+.dato strong {
+    display: block;
+    margin-bottom: 9px;
+
+    color: #64748b;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.dato span {
+    display: block;
+
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
+}
+
+/* Secciones */
+
+.contenido-ventana h3 {
+    margin: 26px 0 12px;
+
+    color: #12345a;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#descripcionComponente {
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Lista de caracteristicas */
+
+#caracteristicasComponente {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+#caracteristicasComponente li {
+    position: relative;
+
+    padding: 12px 12px 12px 34px;
+
+    background: #f5f8fc;
+    border: 1px solid #e0e8f2;
+    border-radius: 10px;
+
+    color: #334155;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#caracteristicasComponente li::before {
+    content: "✓";
+    position: absolute;
+    left: 12px;
+    top: 12px;
+
+    color: #1673d1;
+    font-weight: 800;
+}
+
+/* Boton X */
+
+.cerrar {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1f5f9;
+    color: #475569;
+
+    border-radius: 10px;
+    font-size: 27px;
+    line-height: 1;
+
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.cerrar:hover {
+    background: #dbeafe;
+    color: #1556a8;
+}
+
+/* Boton inferior */
+
+.boton-cerrar {
+    display: block;
+    margin: 28px 0 0 auto;
+    padding: 12px 24px;
+
+    background: #174a7e;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.boton-cerrar:hover {
+    background: #0e345b;
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================
+   ANIMACION DE APERTURA DE LA FICHA
+   ========================================== */
+
+@keyframes aparecerFicha {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.contenido-ventana {
+    animation: aparecerFicha 0.25s ease-out;
+}
+
+
+/* Adaptacion a pantallas pequenas */
+
+@media (max-width: 600px) {
+    .ventana {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+
+        background-color: rgba(10, 23, 43, 0.72);
+        backdrop-filter: blur(5px);
+
+        overflow-y: auto;
+        padding: 24px;
+    }
+
+    .contenido-ventana {
+        margin: 12px auto;
+        padding: 24px 18px;
+        border-radius: 15px;
+    }
+
+    .contenido-ventana h2 {
+        font-size: 23px;
+    }
+
+    .informacion-general {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    #caracteristicasComponente {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   COMPONENTE SELECCIONADO
+   ========================================== */
+
+.componente {
+    transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        outline-color 0.2s ease;
+}
+
+.componente.seleccionado {
+    background-color: rgba(23, 105, 194, 0.22);
+    outline: 3px solid #1769c2;
+    outline-offset: -3px;
+    box-shadow: 0 0 12px rgba(23, 105, 194, 0.45);
+}
+
+/* ==========================================
+   EFECTOS DE LAS ZONAS INTERACTIVAS
+   ========================================== */
+
+/* Estado normal: zona transparente */
+
+.componente {
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Al pasar el cursor */
+
+.componente:hover {
+    background-color: rgba(23, 105, 194, 0.14);
+    border-color: #1769c2;
+    box-shadow: 0 0 10px rgba(23, 105, 194, 0.25);
+}
+
+/* Componente seleccionado */
+
+.componente.seleccionado {
+    background-color: rgba(23, 105, 194, 0.22);
+    border-color: #1769c2;
+    box-shadow: 0 0 12px rgba(23, 105, 194, 0.4);
+}
+
+/* ==========================================
+   ENCABEZADO DEL PANEL
+   ========================================== */
+
+.encabezado-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    width: 100%;
+    max-width: 1100px;
+    box-sizing: border-box;
+    margin: 0 auto 24px;
+    padding: 28px 30px;
+
+    background: linear-gradient(
+        135deg,
+        #12345a 0%,
+        #174a7e 100%
+    );
+
+    border: 1px solid #214e78;
+    border-radius: 16px;
+
+    color: #ffffff;
+}
+
+.encabezado-texto {
+    min-width: 0;
+}
+
+.etiqueta-panel {
+    display: inline-block;
+    margin-bottom: 10px;
+
+    color: #9ecbff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.encabezado-panel h1 {
+    margin: 0 0 10px;
+
+    color: #ffffff;
+    font-size: clamp(23px, 3vw, 32px);
+    line-height: 1.2;
+    font-weight: 750;
+}
+
+.encabezado-panel p {
+    max-width: 600px;
+    margin: 0;
+
+    color: #dce9f7;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.indicador-interaccion {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    flex-shrink: 0;
+    padding: 10px 13px;
+
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 30px;
+
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.punto-indicador {
+    width: 8px;
+    height: 8px;
+
+    background: #63dfa1;
+    border-radius: 50%;
+
+    box-shadow: 0 0 8px rgba(99, 223, 161, 0.45);
+}
+
+/* Adaptacion a pantallas pequenas */
+
+@media (max-width: 650px) {
+    .encabezado-panel {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+
+        padding: 22px 20px;
+        margin-bottom: 18px;
+    }
+
+    .indicador-interaccion {
+        align-self: flex-start;
+    }
+}
+
+/* ==========================================
+   GUIA DE INTERACCION
+   ========================================== */
+
+.guia-interaccion {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+
+    width: 100%;
+    max-width: 1100px;
+    box-sizing: border-box;
+    margin: 0 auto 24px;
+}
+
+.paso-interaccion {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    min-width: 0;
+    padding: 18px;
+
+    background: #ffffff;
+    border: 1px solid #dbe4ef;
+    border-radius: 12px;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.paso-interaccion:hover {
+    border-color: #9ec5f5;
+    transform: translateY(-2px);
+}
+
+.numero-paso {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+
+    background: #eaf2ff;
+    color: #1556a8;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.paso-interaccion strong {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #12345a;
+    font-size: 14px;
+}
+
+.paso-interaccion p {
+    margin: 0;
+
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Adaptacion a pantallas pequenas */
+
+@media (max-width: 700px) {
+    .guia-interaccion {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    .paso-interaccion {
+        padding: 14px;
+    }
+}
+
+/* ==========================================
+   DISENO RESPONSIVE
+   Computadora, tableta y celular
+   ========================================== */
+
+/* Evitar desbordamientos horizontales del documento */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-width: 0;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+/* Encabezado y panel */
+
+.encabezado-panel,
+.guia-interaccion,
+.imagen-panel {
+    width: calc(100% - 32px);
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Imagen siempre proporcional */
+
+.imagen-panel img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ==========================================
+   TABLETAS
+   ========================================== */
+
+@media (max-width: 900px) {
+    .encabezado-panel {
+        padding: 24px;
+        gap: 16px;
+    }
+
+    .encabezado-panel h1 {
+        font-size: 27px;
+    }
+
+    .guia-interaccion {
+        gap: 10px;
+    }
+
+    .paso-interaccion {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    .numero-paso {
+        width: 36px;
+        height: 36px;
+    }
+
+    .contenido-ventana {
+        max-width: 680px;
+    }
+}
+
+/* ==========================================
+   CELULARES
+   ========================================== */
+
+@media (max-width: 600px) {
+    .encabezado-panel,
+    .guia-interaccion,
+    .imagen-panel {
+        width: calc(100% - 24px);
+    }
+
+    .encabezado-panel {
+        padding: 20px 18px;
+        gap: 14px;
+        margin-bottom: 16px;
+        border-radius: 12px;
+    }
+
+    .encabezado-panel h1 {
+        font-size: 23px;
+        line-height: 1.3;
+    }
+
+    .encabezado-panel p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .etiqueta-panel {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .indicador-interaccion {
+        white-space: normal;
+        font-size: 12px;
+    }
+
+    .guia-interaccion {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .paso-interaccion {
+        padding: 12px;
+    }
+
+    /* Ficha tecnica */
+
+    .ventana {
+        padding: 10px;
+    }
+
+    .contenido-ventana {
+        width: 100%;
+        max-width: 100%;
+        margin: 8px auto;
+        padding: 22px 16px;
+        border-radius: 14px;
+    }
+
+    .contenido-ventana h2 {
+        font-size: 22px;
+        overflow-wrap: anywhere;
+    }
+
+    .numero-parte {
+        font-size: 16px;
+        padding: 12px 10px;
+    }
+
+    .informacion-general {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    #caracteristicasComponente {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .dato {
+        padding: 12px;
+    }
+
+    .contenido-ventana h3 {
+        font-size: 17px;
+    }
+
+    #descripcionComponente {
+        font-size: 14px;
+    }
+
+    .boton-cerrar {
+        width: 100%;
+        min-height: 44px;
+    }
+
+    .cerrar {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Reducir animaciones si el usuario lo prefiere */
+
+@media (prefers-reduced-motion: reduce) {
+    .componente,
+    .paso-interaccion,
+    .contenido-ventana {
+        animation: none !important;
+        transition: none !important;
+    }
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Panel Interactivo</title>
+    <link rel="stylesheet" href="estilo.css">
+    
+    
+</head>
+
+
+    
+
+<!-- ENCABEZADO DEL PANEL -->
+<header class="encabezado-panel">
+    <div class="encabezado-texto">
+        <span class="etiqueta-panel">AUTOMATIZACIÓN INDUSTRIAL</span>
+
+        <h1>Panel Interactivo de Control</h1>
+
+        <p>
+            Explora los componentes del sistema y consulta
+            sus funciones y características técnicas.
+        </p>
+    </div>
+
+    <div class="indicador-interaccion">
+        <span class="punto-indicador"></span>
+        Panel interactivo
+    </div>
+</header>
+
+<!-- GUIA DE INTERACCION -->
+<section class="guia-interaccion">
+
+    <div class="paso-interaccion">
+        <span class="numero-paso">01</span>
+        <div>
+            <strong>Explora</strong>
+            <p>Pasa el cursor sobre un componente.</p>
+        </div>
+    </div>
+
+    <div class="paso-interaccion">
+        <span class="numero-paso">02</span>
+        <div>
+            <strong>Selecciona</strong>
+            <p>Haz clic en la zona interactiva.</p>
+        </div>
+    </div>
+
+    <div class="paso-interaccion">
+        <span class="numero-paso">03</span>
+        <div>
+            <strong>Consulta</strong>
+            <p>Descubre su información técnica.</p>
+        </div>
+    </div>
+
+</section>
+
+
+<div class="imagen-panel">
+
+    <img src="panel.png" alt="Panel de automatización">
+
+    <!-- Zona interactiva de la HMI -->
+
+    <button class="componente hmi" onclick="mostrarHMI()"> </button>
+
+    <!-- Zona interactiva del controlador PID -->
+
+    <button class="componente pid" onclick="mostrarComponente('pid')"> </button>
+
+    <!-- Zona interactiva del panel de alarmas -->
+
+    <button class="componente panel-alarmas" onclick="mostrarComponente('panelAlarmas')"> </button>
+    <!-- PRUEBA INTERRUPTOR -->
+
+    <button class="componente interruptor-limite" onclick="mostrarComponente('interruptorLimite')"> </button>
+
+    <!-- Zona interactiva del ventilador -->
+
+    <button class="componente ventilador" onclick="mostrarComponente('ventilador')"> </button>
+
+    <!-- Zona interactiva del sensor de temperatura tipo J -->
+    <button class="componente sensor-j" onclick="mostrarComponente('sensorJ')"> </button>
+
+    <!-- SMART DATA LOGGER -->
+    <button class="componente smart-data-logger" onclick="mostrarComponente('smartDataLogger')"> </button>
+
+    <!-- TRANSMISOR DE TEMPERATURA/HUMEDAD -->
+    <button class="componente transmisor-temperatura" onclick="mostrarComponente('transmisorTemperatura')"> </button>
+
+    <!-- MEDIDOR DE ENERGÍA -->
+    <button class="componente medidor-energia" onclick="mostrarComponente('medidorEnergia')"> </button>
+
+    <!-- CONVERTIDOR RS485 A ETHERNET -->
+    <button class="componente convertidor-rs485" onclick="mostrarComponente('convertidorRS485')"> </button>
+
+    <!-- TARJETA FLEXYS DE ENTRADAS -->
+    <button class="componente flexys-entradas" onclick="mostrarComponente('flexysEntradas')"> </button>
+
+    <!-- TARJETA FLEXYS DE SALIDAS -->
+    <button class="componente flexys-salidas" onclick="mostrarComponente('flexysSalidas')"> </button>
+
+    <!-- TORRETA MULTINIVEL -->
+    <button class="componente torreta-multinivel" onclick="mostrarComponente('torretaMultinivel')"> </button>
+
+</div>
+
+
+
+
+<!-- Ventana de información -->
+<div id="ventanaHMI" class="ventana">
+
+    <div class="contenido-ventana">
+
+        <span class="cerrar" onclick="cerrarVentana()">
+            &times;
+        </span>
+
+        <h2 id="nombreComponente">
+            Componente
+        </h2>
+
+        <div class="numero-parte" id="numeroParte">
+            Número de parte
+        </div>
+
+        <hr>
+
+        <div class="informacion-general">
+
+            <div class="dato">
+
+                <strong>Marca</strong>
+
+                <span id="marcaComponente">
+                    -
+                </span>
+
+            </div>
+
+            <div class="dato">
+
+                <strong>Tipo</strong>
+
+                <span id="tipoComponente">
+                    -
+                </span>
+
+            </div>
+
+            <div class="dato">
+
+                <strong>Función</strong>
+
+                <span id="funcionComponente">
+                    -
+                </span>
+
+            </div>
+
+        </div>
+
+        <h3>Descripción</h3>
+
+        <p id="descripcionComponente">
+            Descripción del componente.
+        </p>
+
+        <h3>Características</h3>
+
+        <ul id="caracteristicasComponente">
+        </ul>
+
+        <button
+            class="boton-cerrar"
+            onclick="cerrarVentana()">
+
+            Cerrar
+
+        </button>
+
+    </div>
+
+</div>
+    <script src="programa.js"></script>
+</body>
+
+</html>
